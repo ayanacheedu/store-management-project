@@ -1,0 +1,35 @@
+/* Subclass of Bakery representing a loaf of bread. */
+class Bread extends Bakery {
+    private boolean isSourdough;
+
+    /* No-argument constructor. Defaults to plain, non-sourdough bread. */
+    public Bread() {
+        this("plain", 0.5, false);
+    }
+
+    /* Parameterized constructor for flavor and price. Sourdough defaults to false. */
+    public Bread(String flavor, double price) {
+        this(flavor, price, false);
+    }
+
+    /* Parameterized constructor for all fields. Calls the superclass constructor with super. */
+    public Bread(String flavor, double price, boolean isSourdough) {
+        super(flavor, price);
+        this.isSourdough = isSourdough;
+    }
+
+    /* Accessor for isSourdough. Returns true if the bread is sourdough. */
+    public boolean getIsSourdough() { 
+      return isSourdough; 
+    }
+
+    /* Mutator for isSourdough. */
+    public void setIsSourdough(boolean isSourdough) { 
+      this.isSourdough = isSourdough; 
+    }
+
+    /* Returns the state of this Bread, including the superclass toString(). */
+    public String toString() {
+        return "Bread -> " + super.toString() + ", Sourdough: " + isSourdough;
+    }
+}
